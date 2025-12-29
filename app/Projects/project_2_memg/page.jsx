@@ -73,37 +73,6 @@ const page = () => {
     };
   };
   return (
-    // <div className='flex justify-center'>
-    //    <div className='container '>
-    //        <h1 className='text-center mt-2 '>🔥Meme Generator🔥</h1>
-
-    //        {/* //Memes Selection Dropdown */}
-    //        <div>
-    //         <select className='bg-blue-500 form-select' onChange={handleChange}  >
-    //           {memes.map((meme)=><option key={meme.id} value={meme.id} className='bg-red-500'>
-    //             {meme.name}
-    //           </option>)}
-    //         </select>
-    //        </div>
-
-    //        {/* Meme Preview  */}
-    //        {selectedMems &&(
-    //         <div className='relative inline-block'>
-    //             <img src={selectedMems.url} width={400} height={400} alt='memsimg' className='rounded'/>
-    //             <p className='absolute top-0 start-50 text-black font-bold'>{topText}</p>
-    //              <p className='absolute bottom-0 start-50 text-black font-bold'>{bottomText}</p>
-    //         </div>
-    //        )}
-    //        {/* input field */}
-    //        <div className='gap-2'>
-    //          <input type='text' placeholder='Top text' value={topText} onChange={(e)=>setTopText(e.target.value)} className='bg-pink-300'/>
-    //           <input type='text' placeholder='Bottom text' value={bottomText} onChange={(e)=>setBottomText (e.target.value)} className=' bg-green-600'/>
-    //        </div>
-
-    //           {/* Download button */}
-    //           <button className='mt-3 rounded-2xl py-2 px-3 cursor-progress bg-green-600 ' onClick={downloadMeme}>Download meme</button>
-    //    </div>
-    // </div>
     <div className="flex min-h-screen items-center justify-center bg-slate-800 p-4">
       <div className="w-full max-w-lg  rounded-xl bg-white p-6 shadow-lg">
         {/* Heading */}
@@ -112,7 +81,7 @@ const page = () => {
         </h1>
 
         {/* Meme Selection Dropdown */}
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <select
             onChange={handleChange}
             className="w-full rounded-lg border border-slate-300 bg-blue-500 px-3 py-2 text-white outline-none focus:ring-2 focus:ring-blue-400"
@@ -121,7 +90,43 @@ const page = () => {
               <option
                 key={meme.id}
                 value={meme.id}
-                className="bg-white text-black"
+                className="bg-gray-200 text-black   text-sm  sm:text-sm   md:text-base   lg:text-lg "
+              >
+                {meme.name}
+              </option>
+            ))}
+          </select>
+        </div> */}
+
+        <div className="mb-4 w-full">
+          <select
+            onChange={handleChange}
+            className="
+      
+      bg-blue-500
+      text-white
+      outline-none
+      focus:ring-2 focus:ring-blue-400
+
+      px-2 py-2 text-sm
+      sm:px-3 sm:py-2 sm:text-sm
+      md:px-4 md:py-3 md:text-base
+      lg:px-5 lg:py-3 lg:text-lg
+    "
+          >
+            {memes.map((meme) => (
+              <option
+                key={meme.id}
+                value={meme.id}
+                className="
+          bg-gray-200
+          text-black
+          text-sm
+          sm:text-sm
+          md:text-base
+          lg:text-lg
+        
+        "
               >
                 {meme.name}
               </option>
@@ -135,7 +140,7 @@ const page = () => {
             <img
               src={selectedMems.url}
               alt="meme"
-              className="max-h-[350px] rounded-lg object-contain"
+              className="max-h-[350px] max-w-[200px] rounded-lg object-contain"
             />
 
             {/* Top Text */}
