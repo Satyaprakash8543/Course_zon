@@ -73,60 +73,34 @@ const page = () => {
     };
   };
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-800 p-4">
-      <div className="w-full max-w-lg  rounded-xl bg-white p-6 shadow-lg">
-        {/* Heading */}
-        <h1 className="mb-4 text-center text-2xl font-bold text-black">
+    <div className="flex min-h-screen items-center justify-center bg-slate-800 p-3 sm:p-4 md:p-6 overflow-x-hidden">
+      <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl rounded-xl bg-white p-4 sm:p-6 md:p-8 shadow-lg">
+        <h1 className="mb-4 text-center text-xl sm:text-2xl md:text-3xl font-bold text-black">
           🔥 Meme Generator 🔥
         </h1>
 
         {/* Meme Selection Dropdown */}
-        {/* <div className="mb-4">
-          <select
-            onChange={handleChange}
-            className="w-full rounded-lg border border-slate-300 bg-blue-500 px-3 py-2 text-white outline-none focus:ring-2 focus:ring-blue-400"
-          >
-            {memes.map((meme) => (
-              <option
-                key={meme.id}
-                value={meme.id}
-                className="bg-gray-200 text-black   text-sm  sm:text-sm   md:text-base   lg:text-lg "
-              >
-                {meme.name}
-              </option>
-            ))}
-          </select>
-        </div> */}
-
         <div className="mb-4 w-full">
           <select
             onChange={handleChange}
             className="
-      
-      bg-blue-500
-      text-white
-      outline-none
-      focus:ring-2 focus:ring-blue-400
-
-      px-2 py-2 text-sm
-      sm:px-3 sm:py-2 sm:text-sm
-      md:px-4 md:py-3 md:text-base
-      lg:px-5 lg:py-3 lg:text-lg
-    "
+          w-full
+          rounded-lg
+          bg-blue-500
+          text-white
+          outline-none
+          focus:ring-2 focus:ring-blue-400
+          px-3 py-2 text-sm
+          sm:px-4 sm:py-2 sm:text-sm
+          md:px-4 md:py-3 md:text-base
+          lg:px-5 lg:py-3 lg:text-lg
+        "
           >
             {memes.map((meme) => (
               <option
                 key={meme.id}
                 value={meme.id}
-                className="
-          bg-gray-200
-          text-black
-          text-sm
-          sm:text-sm
-          md:text-base
-          lg:text-lg
-        
-        "
+                className="bg-gray-200 text-black text-sm md:text-base lg:text-lg"
               >
                 {meme.name}
               </option>
@@ -140,16 +114,26 @@ const page = () => {
             <img
               src={selectedMems.url}
               alt="meme"
-              className="max-h-[350px] max-w-[200px] rounded-lg object-contain"
+              className="
+            w-full
+            max-w-[220px]
+            sm:max-w-[260px]
+            md:max-w-[320px]
+            lg:max-w-[380px]
+            max-h-[300px]
+            sm:max-h-[350px]
+            rounded-lg
+            object-contain
+          "
             />
 
             {/* Top Text */}
-            <p className="absolute top-2 left-1/2 -translate-x-1/2 text-xl font-extrabold text-black drop-shadow-lg">
+            <p className="absolute top-2 left-1/2 -translate-x-1/2 text-sm sm:text-base md:text-lg font-extrabold text-black drop-shadow-lg">
               {topText}
             </p>
 
             {/* Bottom Text */}
-            <p className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xl font-extrabold text-black drop-shadow-lg">
+            <p className="absolute bottom-2 left-1/2 -translate-x-1/2 text-sm sm:text-base md:text-lg font-extrabold text-black drop-shadow-lg">
               {bottomText}
             </p>
           </div>
@@ -162,7 +146,7 @@ const page = () => {
             placeholder="Top text"
             value={topText}
             onChange={(e) => setTopText(e.target.value)}
-            className="rounded-lg border text-black border-slate-300 px-3 py-2 outline-none focus:ring-2 focus:ring-pink-400"
+            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm md:text-base text-black outline-none focus:ring-2 focus:ring-pink-400"
           />
 
           <input
@@ -170,14 +154,14 @@ const page = () => {
             placeholder="Bottom text"
             value={bottomText}
             onChange={(e) => setBottomText(e.target.value)}
-            className="rounded-lg border text-black border-slate-300 px-3 py-2 outline-none focus:ring-2 focus:ring-green-400"
+            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm md:text-base text-black outline-none focus:ring-2 focus:ring-green-400"
           />
         </div>
 
         {/* Download Button */}
         <button
           onClick={downloadMeme}
-          className="w-full rounded-xl bg-green-600 py-2 font-semibold text-white transition hover:bg-green-700 active:scale-95"
+          className="w-full rounded-xl bg-green-600 py-2 sm:py-3 text-sm sm:text-base font-semibold text-white transition hover:bg-green-700 active:scale-95"
         >
           Download Meme
         </button>
